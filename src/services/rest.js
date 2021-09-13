@@ -28,3 +28,10 @@ export const loginService = async (payload) => {
   return await request(API_URLS.LOGIN, METHODS.POST, JSON.stringify(payload));
 };
 
+export const registerService = async (payload) => {
+  // Same comment as above
+  payload.email = 'eve.holt@reqres.in';
+  payload.password = 'pistol';
+  return await request(API_URLS.REGISTER, METHODS.POST, JSON.stringify(payload));
+};
+
