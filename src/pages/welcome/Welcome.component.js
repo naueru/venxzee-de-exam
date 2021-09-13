@@ -8,7 +8,7 @@ import { loginService, registerService, getPostList } from 'services/rest';
 import Modal from 'components/modal';
 import Login from 'components/sessionForms/login';
 import Register from 'components/sessionForms/register';
-import PostList from 'components/postList/PostList.component';
+import InfinitePostList from 'components/infinitePostList/InfinitePostList.component';
 
 import styles from './styles';
 
@@ -56,7 +56,7 @@ const Welcome = () => {
       /
       <button css={styles.button} onClick={() => setShowRegisterModal(true)}>Register</button>
     </header>
-    {postData &&<PostList posts={postData} />}
+    <InfinitePostList />
     {showLoginModal && <Modal
       title={'Login'}
       onClose={() => setShowLoginModal(false)}
