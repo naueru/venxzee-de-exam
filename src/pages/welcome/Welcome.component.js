@@ -6,12 +6,11 @@ import { useState } from 'react';
 import { loginService, registerService } from 'services/rest';
 
 import { MOCKS } from 'globals/constants';
-import { parsePost } from 'utils/helpers';
 
 import Modal from 'components/modal';
 import Login from 'components/sessionForms/login';
 import Register from 'components/sessionForms/register';
-import PostCard from '../../components/postCard/PostCard.component';
+import PostList from 'components/postList/PostList.component';
 
 import styles from './styles';
 
@@ -46,7 +45,7 @@ const Welcome = () => {
       /
       <button css={styles.button} onClick={() => setShowRegisterModal(true)}>Register</button>
     </header>
-    <PostCard {...parsePost(MOCKS.UNKNOWN[0])} />
+    <PostList posts={MOCKS.UNKNOWN} />
     {showLoginModal && <Modal
       title={'Login'}
       onClose={() => setShowLoginModal(false)}
