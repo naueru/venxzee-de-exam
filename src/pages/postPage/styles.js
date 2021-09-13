@@ -8,8 +8,13 @@ const container = css`
   padding: 20px;
 `;
 
+const contentContainer = css`
+  max-width: 80vw;
+`;
+
 const styles = {
-  container
+  container,
+  contentContainer
 };
 
 export default styles;
