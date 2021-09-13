@@ -41,3 +41,8 @@ export const getPostList = async (page) => {
   return await request(url, METHODS.GET);
 };
 
+export const getPost = async (id) => {
+  const url = `${API_URLS.POSTS}/${id}`;
+  return await request(url, METHODS.GET);
+};
+
