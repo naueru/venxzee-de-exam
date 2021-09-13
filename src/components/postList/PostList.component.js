@@ -24,7 +24,7 @@ const PostList = ({ posts, isReplays }) => {
           <PostCard {...postProps} />
         </ListItem>
     })
-  }, [posts]);
+  }, [posts, isReplays]);
   return (
     <ul css={styles.list}>
       {renderPosts()}
