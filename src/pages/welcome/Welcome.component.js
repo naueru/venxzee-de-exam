@@ -1,11 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import { loginService, registerService } from 'services/rest';
-
-import { MOCKS } from 'globals/constants';
+import { loginService, registerService, getPostList } from 'services/rest';
 
 import Modal from 'components/modal';
 import Login from 'components/sessionForms/login';
@@ -20,6 +18,7 @@ const Welcome = () => {
   const [ loginError, setLoginError ] = useState('');
   const [ registerError, setRegisterError ] = useState('');
   const [ loading, setLoading ] = useState(false);
+  const [ postData, setPostData ] = useState(null);
   const login = async (data) => {
     return await loginService(data)
       .then((res) => console.log('ToDo: store ->', res?.token))
@@ -39,13 +38,25 @@ const Welcome = () => {
     }
   };
 
+  const fetchPosts = async () => {
+    return await getPostList()
+      .then((post) => setPostData(post?.data));
+  };
+
+  useEffect(() => {
+    // This is just for testing
+    if (!postData) {
+      fetchPosts();
+    }
+  }, [postData]);
+
   return <div css={styles.container}>
     <header css={styles.header}>
       <button css={styles.button} onClick={() => setShowLoginModal(true)}>Login</button>
       /
       <button css={styles.button} onClick={() => setShowRegisterModal(true)}>Register</button>
     </header>
-    <PostList posts={MOCKS.UNKNOWN} />
+    {postData &&<PostList posts={postData} />}
     {showLoginModal && <Modal
       title={'Login'}
       onClose={() => setShowLoginModal(false)}
