@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^12.1.10",
     "components": "file:src/components",
     "globals": "file:src/globals",
+    "hooks": "file:src/hooks",
+    "lodash.debounce": "^4.0.8",
     "pages": "file:src/pages",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
