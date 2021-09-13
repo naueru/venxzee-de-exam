@@ -1,10 +1,17 @@
 import { css } from '@emotion/react';
 
-const container = css``;
-
+const list = css`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 80vw;
+  padding: 0;
+`;
 
 const styles = {
-  container
+  list
 };
 
 export default styles;
