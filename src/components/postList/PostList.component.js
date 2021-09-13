@@ -19,9 +19,9 @@ const ListItem = styled.li`
 const PostList = ({ posts, isReplays }) => {
   const renderPosts = useCallback(() => {
     return posts.map((post, index) => {
-      const postProps = parsePost(post)
+      const postProps = parsePost(post);
       return <ListItem isReplays={isReplays} key={`Post_key_${index}_id_${postProps?.id}`}>
-          <PostCard {...postProps} />
+          <PostCard {...postProps} showReplaysLink={!isReplays} />
         </ListItem>
     })
   }, [posts, isReplays]);
