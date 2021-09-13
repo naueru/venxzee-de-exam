@@ -12,9 +12,9 @@ const spin = keyframes`
 
 const spinner = css`
   animation: ${spin} 1s ease infinite;
-  border-left-color: rgba(128, 255, 0, 1);
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(128, 255, 0, 1);
   display: inline-block;
   height: 18px;
   width: 18px;
