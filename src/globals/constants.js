@@ -11,3 +11,9 @@ export const METHODS = {
   GET: 'GET',
   POST: 'POST'
 };
+
+export const MESSAGES = {
+  INVALID_EMAIL: 'Please use a valid email',
+  PASSWORD_MISSMATCH: 'Password and repeat password should match',
+  MISSING_PASSWORD: 'Please type the password'
+};
