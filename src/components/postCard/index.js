@@ -1,1 +1,1 @@
-export { defailt } from './PostCard';
+export { default } from './PostCard.component';
