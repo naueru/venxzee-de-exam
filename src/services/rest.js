@@ -35,3 +35,9 @@ export const registerService = async (payload) => {
   return await request(API_URLS.REGISTER, METHODS.POST, JSON.stringify(payload));
 };
 
+export const getPostList = async (page) => {
+  const params = page ? `?page=${page}` : '';
+  const url = `${API_URLS.POSTS}${params}`;
+  return await request(url, METHODS.GET);
+};
+
